@@ -9,10 +9,8 @@ namespace TestCam
     {
         private Capture capture; //Points to the camera
         private Image<Bgr, Byte> IMG; //List of blue,green and red images. This is orginal image
-        private Image<Gray, Byte> R_frame;
-        private Image<Gray, Byte> G_frame;
-        private Image<Gray, Byte> B_frame;
         private Image<Gray, Byte> GrayImg;
+        private Image<Gray, Byte> BWImg;
         public Form1()
         {
             InitializeComponent();
@@ -30,19 +28,15 @@ namespace TestCam
                     MessageBox.Show(excpt.Message);
                 }
             }
-            IMG = capture.QueryFrame(); //get a picture from a camera
-            R_frame = IMG[2].Copy();
-            G_frame = IMG[1].Copy();
-            B_frame = IMG[0].Copy();            
+
+            IMG = capture.QueryFrame(); //get a picture from a camera            
             GrayImg = IMG.Convert<Gray, Byte>();
-  
+            BWImg = GrayImg.ThresholdBinaryInv(new Gray(50),new Gray(255));
             try
             {
                 imageBox1.Image = IMG;
                 imageBox2.Image = GrayImg;
-                imageBox3.Image = R_frame;
-                imageBox4.Image = G_frame;
-                imageBox5.Image = B_frame;
+                imageBox3.Image = BWImg;
             }
             catch (Exception ex)
             {
@@ -67,6 +61,11 @@ namespace TestCam
         }
 
         private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

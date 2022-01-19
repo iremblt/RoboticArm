@@ -33,12 +33,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.imageBox4 = new Emgu.CV.UI.ImageBox();
-            this.imageBox5 = new Emgu.CV.UI.ImageBox();
             this.imageBox3 = new Emgu.CV.UI.ImageBox();
             this.imageBox2 = new Emgu.CV.UI.ImageBox();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
@@ -47,8 +43,6 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
@@ -58,6 +52,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -68,24 +63,22 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.imageBox4);
-            this.splitContainer1.Panel2.Controls.Add(this.imageBox5);
             this.splitContainer1.Panel2.Controls.Add(this.imageBox3);
             this.splitContainer1.Panel2.Controls.Add(this.imageBox2);
             this.splitContainer1.Panel2.Controls.Add(this.imageBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(892, 569);
-            this.splitContainer1.SplitterDistance = 191;
+            this.splitContainer1.Size = new System.Drawing.Size(1189, 700);
+            this.splitContainer1.SplitterDistance = 254;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(54, 91);
+            this.button3.Location = new System.Drawing.Point(72, 112);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 2;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
@@ -94,9 +87,10 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(54, 53);
+            this.button2.Location = new System.Drawing.Point(72, 65);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 1;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
@@ -104,76 +98,43 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 12);
+            this.button1.Location = new System.Drawing.Point(72, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(503, 334);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 23);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Blue";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(134, 334);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 23);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Green";
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(503, 98);
+            this.label2.Location = new System.Drawing.Point(616, 206);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 23);
+            this.label2.Size = new System.Drawing.Size(211, 40);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Red";
+            this.label2.Text = "Black And White";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 94);
+            this.label1.Location = new System.Drawing.Point(164, 206);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 23);
+            this.label1.Size = new System.Drawing.Size(65, 28);
             this.label1.TabIndex = 6;
             this.label1.Text = "Gray";
-            // 
-            // imageBox4
-            // 
-            this.imageBox4.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.imageBox4.Location = new System.Drawing.Point(19, 360);
-            this.imageBox4.Name = "imageBox4";
-            this.imageBox4.Size = new System.Drawing.Size(309, 197);
-            this.imageBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageBox4.TabIndex = 5;
-            this.imageBox4.TabStop = false;
-            // 
-            // imageBox5
-            // 
-            this.imageBox5.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.imageBox5.Location = new System.Drawing.Point(362, 360);
-            this.imageBox5.Name = "imageBox5";
-            this.imageBox5.Size = new System.Drawing.Size(309, 197);
-            this.imageBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageBox5.TabIndex = 4;
-            this.imageBox5.TabStop = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // imageBox3
             // 
             this.imageBox3.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.imageBox3.Location = new System.Drawing.Point(362, 124);
+            this.imageBox3.Location = new System.Drawing.Point(477, 250);
+            this.imageBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imageBox3.Name = "imageBox3";
-            this.imageBox3.Size = new System.Drawing.Size(309, 197);
+            this.imageBox3.Size = new System.Drawing.Size(412, 242);
             this.imageBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBox3.TabIndex = 3;
             this.imageBox3.TabStop = false;
@@ -181,18 +142,20 @@
             // imageBox2
             // 
             this.imageBox2.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.imageBox2.Location = new System.Drawing.Point(19, 124);
+            this.imageBox2.Location = new System.Drawing.Point(4, 250);
+            this.imageBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imageBox2.Name = "imageBox2";
-            this.imageBox2.Size = new System.Drawing.Size(309, 197);
+            this.imageBox2.Size = new System.Drawing.Size(412, 242);
             this.imageBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBox2.TabIndex = 2;
             this.imageBox2.TabStop = false;
             // 
             // imageBox1
             // 
-            this.imageBox1.Location = new System.Drawing.Point(232, 12);
+            this.imageBox1.Location = new System.Drawing.Point(265, 32);
+            this.imageBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(172, 106);
+            this.imageBox1.Size = new System.Drawing.Size(331, 176);
             this.imageBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBox1.TabIndex = 2;
             this.imageBox1.TabStop = false;
@@ -204,18 +167,17 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 569);
+            this.ClientSize = new System.Drawing.Size(1189, 700);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
@@ -223,12 +185,8 @@
 
         }
         private Emgu.CV.UI.ImageBox imageBox3;
-        private Emgu.CV.UI.ImageBox imageBox5;
-        private Emgu.CV.UI.ImageBox imageBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
 
         #endregion
 
