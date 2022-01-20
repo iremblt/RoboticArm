@@ -11,6 +11,9 @@ namespace TestCam
         private Image<Bgr, Byte> IMG; //List of blue,green and red images. This is orginal image
         private Image<Gray, Byte> GrayImg;
         private Image<Gray, Byte> BWImg;
+        private double myScale = 300.0 / 640; //camera size
+        private int Xpx, Ypx,N;
+        private double Xcm, Ycm;
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +35,38 @@ namespace TestCam
             IMG = capture.QueryFrame(); //get a picture from a camera            
             GrayImg = IMG.Convert<Gray, Byte>();
             BWImg = GrayImg.ThresholdBinaryInv(new Gray(50),new Gray(255));
+            Xpx = 0;
+            Ypx = 0;
+            N = 0; //Number of pixels
+            for(int i= 0; i < BWImg.Width; i++)
+            {
+                for(int j= 0; j < BWImg.Height; j++)
+                {
+                    if (BWImg[j,i].Intensity > 128)
+                    {
+                        N++;
+                        Xpx = Xpx + i;
+                        Ypx = Ypx + j;
+                    } 
+                }
+            }
+            if (N > 0)
+            {
+                Xpx = Xpx / N; //Center point of the foreground in x object
+                Ypx = Ypx / N;
+                Xcm = (Xpx-320) * myScale; //Think like that center of the object is 320,240
+                Ycm = (240-Ypx) * myScale;
+                textBox1.Text = Xcm.ToString();
+                textBox2.Text = Ycm.ToString();
+                textBox3.Text = N.ToString();
+            }
+            else
+            {
+                textBox1.Text = Xcm.ToString();
+                textBox2.Text = Ycm.ToString();
+                textBox3.Text = N.ToString();
+            }
+            
             try
             {
                 imageBox1.Image = IMG;
@@ -54,7 +89,8 @@ namespace TestCam
             Application.Idle -= processFrame; //It stops
             button1.Enabled = true;
             button2.Enabled = false;
-        }    
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             IMG.Save("Image" +  ".jpg");
