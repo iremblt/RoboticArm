@@ -1,0 +1,38 @@
+#include <Servo.h>
+Servo M1,M2;
+
+int Th1, Th2, tmp;
+
+void setup() 
+{
+  Serial.begin(9600); //It is boud rate. It provides communcation between pc and ardunio 
+  pinMode(13,OUTPUT); 
+  digitalWrite(13,0);
+  Th1 = 0;
+  Th2 = 0;
+  M1.attach(A1); //Servo motor 1
+  M2.attach(A2); //Servo motor 2
+  M1.write(90); //zero position
+  M2.write(90);
+}
+
+void loop() 
+{
+  delay(200);
+
+  if(Serial.available()>=2)// Avaiable bits in number of buffer returns. It must be bigger than 2 becase of I have two servo motor.
+  {
+    Th1 = Serial.read(); //Read only one byte;
+    Th2 = Serial.read();
+    
+    while(Serial.available()) //Remove buffer any old values send by the pc
+    tmp = Serial.read();
+
+    // Run the robotic arm here.
+    M1.write(Th1);
+    M2.write(Th2);
+    digitalWrite(13,1);
+    delay(500);
+    digitalWrite(13,0);
+  }
+}
